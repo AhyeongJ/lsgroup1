@@ -150,30 +150,34 @@ pd.reset_option('display.max_columns')
 
 지역별 시장 수 막대그래프 
 ```{python}
-px.bar(data_frame = market_pop, x = 'region', y = 'market_count') 
+px.bar(data_frame = market_pop, x = 'region', y = 'market_count', orientation='h', color = 'region') \
+  .update_layout(xaxis = {"categoryorder":"total ascending"}).show()
 ```
 
 지역 별 점포 수 막대 그래프
 ```{python}
-px.bar(data_frame = market_pop, x = 'region', y = 'store_sum') 
+px.bar(data_frame = market_pop, x = 'region', y = 'store_sum', orientation='h', color = 'region') \
+  .update_layout(xaxis = {"categoryorder":"total ascending"}).show()
 ```
 지역별 총 인구 수 막대 그래프 
 ```{python}
-px.bar(data_frame = market_pop, x = 'region', y = 'total_pop') 
+px.bar(data_frame = market_pop, x = 'region', y = 'total_pop', orientation='h', color = 'region') \
+  .update_layout(xaxis = {"categoryorder":"total ascending"}).show()
 ```
 지역별 20세 미만 인구 막대 그래프 
 ```{python}
-px.bar(data_frame = market_pop, x = 'region', y = 'under20') 
+# px.bar(data_frame = market_pop, x = 'region', y = 'under20') 
 ```
 
 지역별 20세 이상 60세 미만 인구 막대 그래프
 ```{python}
-px.bar(data_frame = market_pop, x = 'region', y = '2050') 
+# px.bar(data_frame = market_pop, x = 'region', y = '2050') 
 ```
 
 지역별 60세 이상 막대 그래프 
 ```{python}
-px.bar(data_frame = market_pop, x = 'region', y = 'over60') 
+px.bar(data_frame = market_pop, x = 'region', y = 'over60', orientation='h', color = 'region') \
+  .update_layout(xaxis = {"categoryorder":"total ascending"}).show()
 ```
 
 지역별 인구 비율 누적 그래프 
